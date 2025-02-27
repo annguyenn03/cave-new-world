@@ -3,11 +3,11 @@ import mitsuba as mi
 import matplotlib.pyplot as plt
 import numpy as np
 
-# mi.set_variant('cuda_ad_rgb')
-mi.set_variant('scalar_rgb')
+mi.set_variant('cuda_ad_rgb')
+
 #Load Scene
 scene = mi.load_file('asset/cave_scene.xml')
-image = mi.render(scene)
+image = mi.render(scene, spp= 1024)
 bitmap = mi.Bitmap(image)
 image = np.array(bitmap)
 
