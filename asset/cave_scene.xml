@@ -9,20 +9,20 @@
 <!-- Camera and Rendering Parameters -->
 
 	<integrator type="path" id="elm__0" name="elm__0">
-		<integer name="max_depth" value="1"/>
+		<integer name="max_depth" value="12"/>
 	</integrator>
 	<sensor type="perspective" id="elm__4" name="elm__4">
 		<string name="fov_axis" value="x"/>
-		<float name="fov" value="16.024317"/>
+		<float name="fov" value="39.597755"/>
 		<float name="principal_point_offset_x" value="0.000000"/>
 		<float name="principal_point_offset_y" value="-0.000000"/>
 		<float name="near_clip" value="0.100000"/>
 		<float name="far_clip" value="1000.000000"/>
 		<transform name="to_world">
-			<rotate x="1" angle="-173.96565582065512"/>
-			<rotate y="1" angle="81.11891926257486"/>
-			<rotate z="1" angle="-175.3607082982519"/>
-			<translate value="-55.803776 21.933296 174.336594"/>
+			<rotate x="1" angle="176.07402593441134"/>
+			<rotate y="1" angle="84.54931347132207"/>
+			<rotate z="1" angle="-179.9988028956624"/>
+			<translate value="-198.199203 -38.066174 161.337433"/>
 		</transform>
 		<sampler type="independent" name="sampler">
 			<integer name="sample_count" value="$spp"/>
@@ -56,7 +56,7 @@
 <!-- Emitters -->
 
 	<emitter type="point" id="elm__1" name="elm__1">
-		<point name="position" x="0.5542764663696289" y="-7.214598655700684" z="155.7376708984375"/>
+		<point name="position" x="68.6329116821289" y="-33.7509880065918" z="145.22157287597656"/>
 		<rgb value="79.577469 79.577469 79.577469" name="intensity"/>
 	</emitter>
 
