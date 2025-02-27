@@ -11,7 +11,7 @@
 	<integrator type="path" id="elm__0" name="elm__0">
 		<integer name="max_depth" value="12"/>
 	</integrator>
-	<sensor type="perspective" id="elm__4" name="elm__4">
+	<sensor type="perspective" id="elm__5" name="elm__5">
 		<string name="fov_axis" value="x"/>
 		<float name="fov" value="39.597755"/>
 		<float name="principal_point_offset_x" value="0.000000"/>
@@ -19,10 +19,10 @@
 		<float name="near_clip" value="0.100000"/>
 		<float name="far_clip" value="1000.000000"/>
 		<transform name="to_world">
-			<rotate x="1" angle="176.07402593441134"/>
-			<rotate y="1" angle="84.54931347132207"/>
-			<rotate z="1" angle="-179.9988028956624"/>
-			<translate value="-198.199203 -38.066174 161.337433"/>
+			<rotate x="1" angle="176.38497712656533"/>
+			<rotate y="1" angle="87.75015868244348"/>
+			<rotate z="1" angle="179.99324312167803"/>
+			<translate value="-186.634277 -37.138500 158.988129"/>
 		</transform>
 		<sampler type="independent" name="sampler">
 			<integer name="sample_count" value="$spp"/>
@@ -55,14 +55,17 @@
 
 <!-- Emitters -->
 
-	<emitter type="point" id="elm__1" name="elm__1">
+	<emitter type="constant" id="elm__1" name="elm__1">
+		<rgb value="0.661389 0.661389 0.661389" name="radiance"/>
+	</emitter>
+	<emitter type="point" id="elm__2" name="elm__2">
 		<point name="position" x="68.6329116821289" y="-33.7509880065918" z="145.22157287597656"/>
-		<rgb value="79.577469 79.577469 79.577469" name="intensity"/>
+		<rgb value="178.253540 178.253540 178.253540" name="intensity"/>
 	</emitter>
 
 <!-- Shapes -->
 
-	<shape type="ply" id="elm__3" name="elm__3">
+	<shape type="ply" id="elm__4" name="elm__4">
 		<string name="filename" value="meshes/Stereo_textured_mesh.ply"/>
 		<ref id="mat-Material0" name="bsdf"/>
 	</shape>
