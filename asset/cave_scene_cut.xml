@@ -54,17 +54,9 @@
 	</bsdf>
 
 <!-- Emitters -->
-
-	<emitter type="constant" id="elm__1" name="elm__1">
-		<rgb value="1.144712 1.144712 1.144712" name="radiance"/>
-	</emitter>
-	<emitter type="point" id="elm__2" name="elm__2">
-		<point name="position" x="4.076245307922363" y="5.903861999511719" z="-1.0054539442062378"/>
-		<rgb value="79.577469 79.577469 79.577469" name="intensity"/>
-	</emitter>
 	<emitter type="directional" id="sunlight">
-		<spectrum name="irradiance" value="5.0"/>  <!-- You can increase this if it looks too dark -->
-		<vector name="direction" x="-0.2857" y="0.8512" z="-0.4397"/> 
+		<spectrum name="irradiance" value="2500.0"/> 
+		<vector name="direction" x="-0.65" y="-0.45" z="-0.1"/> 
 	</emitter>
 <!-- Shapes -->
 
