@@ -55,7 +55,7 @@
 
 <!-- Emitters -->
 	<emitter type="directional" id="sunlight">
-		<spectrum name="irradiance" value="2500.0"/> 
+		<spectrum name="irradiance" value="500.0"/> 
 		<vector name="direction" x="-0.65" y="-0.45" z="-0.1"/> 
 	</emitter>
 <!-- Shapes -->
