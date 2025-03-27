@@ -1,4 +1,5 @@
 import mitsuba as mi
+import os
 # from mitsuba import ScalarTransform4f as T
 import matplotlib.pyplot as plt
 import numpy as np
@@ -12,7 +13,7 @@ bitmap = mi.Bitmap(image)
 image = np.array(bitmap)
 
 # plt.imshow(image)
-# plt.imshow(image ** (1.0 / 2.2)); # approximate sRGB tonemapping
-plt.imshow(image ** 0.3); # approximate sRGB tonemapping
+plt.imshow(image ** (1.0 / 2.2)); # approximate sRGB tonemapping
+# plt.imshow(image ** 0.3); # approximate sRGB tonemapping
 plt.axis("off")
 plt.show()
