@@ -1,6 +1,4 @@
 import mitsuba as mi
-import os
-# from mitsuba import ScalarTransform4f as T
 import matplotlib.pyplot as plt
 import numpy as np
 

@@ -1,4 +1,4 @@
-<scene version="2.1.0">
+<scene version="3.0.0">
 
 <!-- Defaults, these can be set via the command line: -Darg=value -->
 
@@ -8,8 +8,8 @@
 
 <!-- Camera and Rendering Parameters -->
 
-	<integrator type="path" id="elm__0" name="elm__0">
-		<integer name="max_depth" value="12"/>
+	<integrator type="volpath" id="elm__0" name="elm__0">
+		<integer name="max_depth" value="24"/>
 	</integrator>
 	<sensor type="perspective" id="elm__3" name="elm__3">
 		<string name="fov_axis" value="x"/>
@@ -31,6 +31,14 @@
 			<integer name="width" value="$resx"/>
 			<integer name="height" value="$resy"/>
 		</film>
+		<medium type="homogeneous" name="interior">
+            <float name="scale" value="0.0001" />
+			<rgb name="albedo" value="0.98, 0.98, 0.98" />
+			<rgb name="sigma_t" value="0.6, 0.6, 0.6" />
+			<phase type = "hg">
+				<float name = "g" value="0.5"/>
+			</phase>
+		</medium>
 	</sensor>
 
 <!-- Materials -->
@@ -53,38 +61,56 @@
 		</bsdf>
 	</bsdf>
 
-	<medium id="volume_scatter" type="homogeneous">
-		<rgb name = "albedo" value="0.99, 0.9, 0.96"/>
-		<rgb name="sigma_t" value="0.5, 0.25, 0.8"/>
-		<phase type = "hg">
-			<float name = "g" value="0.7"/>
-		</phase>
-	</medium>
+
+
+		
+	
 	<!-- <bsdf type="difuse" id="mat-scatter material" name="mat-scatter material">
 		<rgb value="1.000000 0.000000 0.300000" name="reflectance"/>
 	</bsdf> -->
 
 <!-- Emitters -->
-
+<!--
 	<emitter type="directional" id="elm__6" name="elm__6">
-		<rgb value="142.268265 139.725296 94.349655" name="irradiance"/>
+		<rgb value="500, 500, 500" name="irradiance"/>
 		<transform name="to_world">
 			<matrix value="0.087100 -0.514328 -0.853159 378.282654 -0.473850 0.731938 -0.489626 74.525803 0.876287 0.446916 -0.179962 156.075500 0.000000 0.000000 0.000000 1.000000"/>
 		</transform>
 	</emitter>
-
+-->
 <!-- Shapes -->
+	<shape type="rectangle" id="Light">
+		<transform name="to_world">
+            <matrix value="0.087100 -0.514328 -0.853159 378.282654 -0.473850 0.731938 -0.489626 74.525803 0.876287 0.446916 -0.179962 156.075500 0.000000 0.000000 0.000000 1.000000"/>
+		</transform>
+		<bsdf type="null" />
+		<emitter type="area">
+			<rgb name="radiance" value="541127, 381972, 127324" />
+		</emitter>
+	</shape>
+
 
 	<shape type="ply" id="elm__2" name="elm__2">
 		<string name="filename" value="meshes/Stereo_textured_mesh.ply"/>
 		<ref id="mat-Material0" name="bsdf"/>
 	</shape>
-	<shape type="ply" id="elm__5" name="elm__5">
-		<string name="filename" value="meshes/Cube.ply"/>
-		<boolean name="face_normals" value="true"/>
-		<ref name = "medium" id="volume_scatter"/>
-		<!-- <ref id="mat-scatter material" name="bsdf"/> -->
-	</shape>
+
+<!--
+	<shape type="cube">
+		<transform name="to_world">
+			<scale value="2.5"/>
+			<matrix value="0.087100 -0.514328 -0.853159 378.282654 -0.473850 0.731938 -0.489626 74.525803 0.876287 0.446916 -0.179962 156.075500 0.000000 0.000000 0.000000 1.000000"/>
+			<translate value="-390.549805 -0.557381 146.402985"/>
+		</transform>
+        <bsdf type="null" />
+		<medium type="homogeneous" name="interior">
+            <float name="scale" value="0.5" />
+			<rgb name="albedo" value="1, 1, 1" />
+			<rgb name="sigma_t" value="1, 1, 1" />
+		</medium>
+    </shape>
+
+-->
 <!-- Volumes -->
 
 </scene>
