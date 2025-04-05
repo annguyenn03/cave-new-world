@@ -86,7 +86,7 @@
 		</transform>
 		<bsdf type="null" />
 		<emitter type="area">
-			<rgb name="radiance" value="541127, 381972, 127324" />
+			<rgb name="radiance" value="2705635, 1909860, 636620" />
 		</emitter>
 	</shape>
 
