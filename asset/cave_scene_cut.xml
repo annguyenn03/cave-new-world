@@ -61,23 +61,6 @@
 		</bsdf>
 	</bsdf>
 
-
-
-		
-	
-	<!-- <bsdf type="difuse" id="mat-scatter material" name="mat-scatter material">
-		<rgb value="1.000000 0.000000 0.300000" name="reflectance"/>
-	</bsdf> -->
-
-<!-- Emitters -->
-<!--
-	<emitter type="directional" id="elm__6" name="elm__6">
-		<rgb value="500, 500, 500" name="irradiance"/>
-		<transform name="to_world">
-			<matrix value="0.087100 -0.514328 -0.853159 378.282654 -0.473850 0.731938 -0.489626 74.525803 0.876287 0.446916 -0.179962 156.075500 0.000000 0.000000 0.000000 1.000000"/>
-		</transform>
-	</emitter>
--->
 <!-- Shapes -->
 	<shape type="rectangle" id="Light">
 		<transform name="to_world">
@@ -95,23 +78,5 @@
 		<string name="filename" value="meshes/Stereo_textured_mesh.ply"/>
 		<ref id="mat-Material0" name="bsdf"/>
 	</shape>
-
-<!--
-	<shape type="cube">
-		<transform name="to_world">
-			<scale value="2.5"/>
-			<matrix value="0.087100 -0.514328 -0.853159 378.282654 -0.473850 0.731938 -0.489626 74.525803 0.876287 0.446916 -0.179962 156.075500 0.000000 0.000000 0.000000 1.000000"/>
-			<translate value="-390.549805 -0.557381 146.402985"/>
-		</transform>
-        <bsdf type="null" />
-		<medium type="homogeneous" name="interior">
-            <float name="scale" value="0.5" />
-			<rgb name="albedo" value="1, 1, 1" />
-			<rgb name="sigma_t" value="1, 1, 1" />
-		</medium>
-    </shape>
-
--->
-<!-- Volumes -->
 
 </scene>
