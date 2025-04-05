@@ -1,4 +1,4 @@
-<scene version="2.1.0">
+<scene version="3.0.0">
 
 <!-- Defaults, these can be set via the command line: -Darg=value -->
 
@@ -8,10 +8,10 @@
 
 <!-- Camera and Rendering Parameters -->
 
-	<integrator type="path" id="elm__0" name="elm__0">
-		<integer name="max_depth" value="12"/>
+	<integrator type="volpath" id="elm__0" name="elm__0">
+		<integer name="max_depth" value="24"/>
 	</integrator>
-	<sensor type="perspective" id="elm__5" name="elm__5">
+	<sensor type="perspective" id="elm__3" name="elm__3">
 		<string name="fov_axis" value="x"/>
 		<float name="fov" value="39.597755"/>
 		<float name="principal_point_offset_x" value="0.000000"/>
@@ -31,6 +31,14 @@
 			<integer name="width" value="$resx"/>
 			<integer name="height" value="$resy"/>
 		</film>
+		<medium type="homogeneous" name="interior">
+            <float name="scale" value="0.005" />
+			<rgb name="albedo" value="0.8, 0.8, 0.8" />
+			<rgb name="sigma_t" value="0.1, 0.1, 0.1" />
+			<phase type = "hg">
+				<float name = "g" value="0.7"/>
+			</phase>
+		</medium>
 	</sensor>
 
 <!-- Materials -->
@@ -53,18 +61,22 @@
 		</bsdf>
 	</bsdf>
 
-<!-- Emitters -->
-	<emitter type="directional" id="sunlight">
-		<spectrum name="irradiance" value="500.0"/> 
-		<vector name="direction" x="-0.65" y="-0.45" z="-0.1"/> 
-	</emitter>
 <!-- Shapes -->
+	<shape type="rectangle" id="Light">
+		<transform name="to_world">
+            <matrix value="0.087100 -0.514328 -0.853159 378.282654 -0.473850 0.731938 -0.489626 74.525803 0.876287 0.446916 -0.179962 156.075500 0.000000 0.000000 0.000000 1.000000"/>
+			<translate x="100.0" y="100.0" z="50.0"/>		
+		</transform>
+		<bsdf type="null" />
+		<emitter type="area">
+			<rgb name="radiance" value="2705635, 1909860, 636620" />
+		</emitter>
+	</shape>
 
-	<shape type="ply" id="elm__4" name="elm__4">
+
+	<shape type="ply" id="elm__2" name="elm__2">
 		<string name="filename" value="meshes/Stereo_textured_mesh.ply"/>
 		<ref id="mat-Material0" name="bsdf"/>
 	</shape>
-
-<!-- Volumes -->
 
 </scene>
